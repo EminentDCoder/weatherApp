@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(media_style.css);
+
+:root{
+    --main: hsla(162, 83%, 27%, 0.993);
+    --black: rgb(3, 3, 3);
+    --light: hsl(171, 31%, 79%);
+    --gray: rgb(194, 194, 194);
+    --white: rgb(255, 255, 255);
+    --box-shadow: 0 .5rem 1.5rem rgba(5, 5, 5, 0.1);
+}
+*{
+    font-family: Poppins;
+}
+body{
+ display: flex;   
+ align-items: center;
+ justify-content: center;
+ min-height: 100vh;
+ background-color: var(--light);
+}
+.wrapper{
+    width: 400px;
+    border-radius: 7px;
+    background-color: white;
+}
+.wrapper header{
+    color: var(--main);
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    
+}
+.wrapper header i{
+    font-size: 0px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+.wrapper.active header i{
+    font-size: 1.5rem;
+    margin-left: 5px;
+    margin-right: 12px;
+}
+.wrapper .input-part{
+    margin: 20px 25px 30px;
+}
+.wrapper.active .input-part{
+    display: none;
+}
+.input-part .info-text{
+    font-size: 1rem;   
+    text-align: center;
+    padding: 12px 18px;
+    border-radius: 7px;
+    display: none;
+}
+.info-text.error{
+    background-color: rgba(231, 100, 100, 0.514);
+    color: white;
+    display: flex;
+}
+.info-text.pending{
+    background-color: rgba(10, 238, 40, 0.87);
+    color: white;
+    display: flex;
+}
+.input-part input, 
+.input-part button{
+    width: 100%;
+    height: 3rem;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+}   
+.input-part input {
+    border: 1px solid var(--light);
+    text-align: center;
+}
+.input-part input:is(:focus, :valid){
+    border: 2px solid var(--main);
+}
+.input-part .separator{
+    height: 1px;
+    width: 100%;
+    margin: 25px 0px;
+    background-color: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.separator::before{
+    content: 'or';
+    padding: 0 15px;
+    background-color: rgb(240, 243, 248);
+    color: var(--gray)
+    
+}
+.input-part button{
+    background-color: var(--main);
+    color: var(--white);
+    cursor: pointer;
+}
+
+
+
+/* //TEMPERATURE PAGE STLYES */
+
+.wrapper .weather-part{
+    margin: 30px 0 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.wrapper.active .weather-part{
+    display: flex;
+}
+
+.weather-part img{
+    max-width: 125px
+}
+.weather-part .temp{
+    display: flex;
+    font-size: 72px;
+    font-weight: 500;
+}
+.weather-part .temp .numb{
+    font-weight: 600;
+}
+.weather-part .temp .deg{
+    font-size: 21px;
+    text-align: center;
+    margin: -5px 2px 15px;
+}
+.weather-part .location{
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.location i{
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+
+/* BOTTOM DETAILS STYLES */
+.weather-part .bottom-details{
+    background-color: rgb(228, 231, 238);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid var(--main);
+}
+.bottom-details .column{
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+.column i{
+    color: var(--main);
+    font-size: 30px;
+    margin-right: 6px;
+}
+.humidity{
+    border-left: 2px solid var(--main);
+}
+.details .temp, 
+.humidity span{
+    font-size:  18px;
+    font-weight: 500;
+}
+.details .temp .deg{
+    margin: 0;
+    font-size: 8px;
+    pad: 0 2px 0 1px;
+}
+.details p{
+    font-size: 18px;
+    margin-top: -6px;
+}
